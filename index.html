@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<style>
+    #div {
+
+
+
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 1.2em;
+        color: #333;
+        position: absolute;
+        width: 450px;
+        height: 150px;
+        top: 50%;
+        left: 45%;
+        margin-top: -75px;
+        margin-left: -100px;
+    }
+
+
+
+</style>
+
+<script>
+
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabzdefghijklmnopqrstuvwxyz1234567890ß´+#-.,</*!§$%&/()=?-:;<|@ ';"
+
+    var text = "";
+
+
+function generate() {
+
+    for (i = 0; i <= parseInt(document.getElementById("pwlänge").value); i=i+1){
+
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+        document.getElementById("output").value = text;
+    }
+}
+
+
+
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Passwort Generator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+<div id="div"  >
+Passwortlänge: <input id="pwlänge" >
+    <p></p>
+    <button type="button" value="Generate" onclick="generate()" class="center-block">Generate</button>
+    <p></p>
+    Passwort:</p><output id="output" ></output>
+    <output id="debug"></output>
+    <output id="debug2"></output>
+</div>
+</body>
+</html>
