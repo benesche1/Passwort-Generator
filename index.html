@@ -2,21 +2,7 @@
 <html lang="de">
 
 <style>
-    #div {
 
-
-
-        font-family: Verdana, Arial, Helvetica, sans-serif;
-        font-size: 1.2em;
-        color: #333;
-        position: absolute;
-        width: 450px;
-        height: 150px;
-        top: 50%;
-        left: 45%;
-        margin-top: -75px;
-        margin-left: -100px;
-    }
 
 
 
@@ -24,7 +10,7 @@
 
 <script>
 
-    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabzdefghijklmnopqrstuvwxyz1234567890ß´+#-.,</*!§$%&/()=?-:;<|@ ';"
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabzdefghijklmnopqrstuvwxyz1234567890ß´+#-.,</*!§$%&/()=?-:;<|@ ';";
 
     var text = "";
 
@@ -32,7 +18,7 @@
 function generate() {
 
     for (i = 0; i <= parseInt(document.getElementById("pwlänge").value); i=i+1){
-
+        document.getElementById("output").value = "";
         text += possible.charAt(Math.floor(Math.random() * possible.length));
         document.getElementById("output").value = text;
     }
@@ -56,9 +42,9 @@ Passwortlänge: <input id="pwlänge" >
     <p></p>
     <button type="button" value="Generate" onclick="generate()" class="center-block">Generate</button>
     <p></p>
-    Passwort:</p><output id="output" ></output>
-    <output id="debug"></output>
-    <output id="debug2"></output>
+    Passwort:<output id="output" ></output>
+   <!-- <output id="debug"></output>
+    <output id="debug2"></output> -->
 </div>
 </body>
 </html>
