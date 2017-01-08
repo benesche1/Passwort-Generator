@@ -18,6 +18,18 @@
         margin-top: -75px;
         margin-left: -100px;
     }
+    #output{
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        text-align: center;
+
+
+    }
+    #center{
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+
+    }
 
 
 
@@ -31,11 +43,14 @@
 
 
 function generate() {
+    document.getElementById("output").value = "Passwort:";
+    text = "";
+    document.getElementById("output").id = "center"
+    for (i = 1; i <= parseInt(document.getElementById("pwlänge").value); i=i+1){
 
-    for (i = 0; i <= parseInt(document.getElementById("pwlänge").value); i=i+1){
-        document.getElementById("output").value = "";
         text += possible.charAt(Math.floor(Math.random() * possible.length));
-        document.getElementById("output").value = text;
+        document.getElementById("center").value = "Passwort: " +  text;
+
     }
 }
 
@@ -57,7 +72,7 @@ Passwortlänge: <input id="pwlänge" >
     <p></p>
     <button type="button" value="Generate" onclick="generate()" class="center-block">Generate</button>
     <p></p>
-    Passwort:<output id="output" ></output>
+    <output id="output" name="before">Passwort:</output>
    <!-- <output id="debug"></output>
     <output id="debug2"></output> -->
 </div>
