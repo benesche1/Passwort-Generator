@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <style>
 
     #div {
@@ -41,18 +41,18 @@
 
     var text = "";
 
+    function generate() {
+        document.getElementById("output").value = "Passwort:";
+        text = "";
 
-function generate() {
-    document.getElementById("output").value = "Passwort:";
-    text = "";
-    document.getElementById("output").id = "center"
-    for (i = 1; i <= parseInt(document.getElementById("pwlänge").value); i=i+1){
-
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-        document.getElementById("center").value = "Passwort: " +  text;
-
+        for (i = 1; i <= parseInt(document.getElementById("pwlänge").value); i=i+1){
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+            document.getElementById("output").style.textAlign = "left";
+            document.getElementById("output").style.fontSize = "20px";
+            document.getElementById("output").style.fontFamily ="Verdana, Arial, Helvetica, sans-serif";
+            document.getElementById("output").value = "Passwort: " +  text;
+        }
     }
-}
 
 
 
