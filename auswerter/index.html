@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    #div {
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 18.5px;
+        color: #333;
+        position: absolute;
+        width: 450px;
+        height: 150px;
+        top: 50%;
+        left: 45%;
+        margin-top: -75px;
+        margin-left: -100px;
+    }
+    #output{
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        text-align: center;
+        color: #333;
+
+
+    }
+
+
+</style>
+<script>
+    function count() {
+                document.getElementById("output").value = parseInt(document.getElementById("output").value) + 1
+    }
+</script>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Auswerter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
+<div id="div"  >
+    <button type="button" value="Zählen" onclick="count()" class="center-block">Generate</button>
+    <p></p>
+    <output id="output">0</output>
+</div>
 
+</div>
 </body>
 </html>
